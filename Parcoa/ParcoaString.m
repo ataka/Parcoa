@@ -87,11 +87,11 @@
 }
 
 - (BOOL)hasPrefix:(NSString *)prefix {
-    return [s rangeOfString:prefix options:NSAnchoredSearch range:r].location != NSNotFound;
+    return [s rangeOfString:prefix options:NSAnchoredSearch | NSLiteralSearch range:r].location != NSNotFound;
 }
 
 - (BOOL)hasSuffix:(NSString *)suffix {
-    return [s rangeOfString:suffix options:NSAnchoredSearch | NSBackwardsSearch range:r].location != NSNotFound;
+    return [s rangeOfString:suffix options:NSAnchoredSearch | NSBackwardsSearch | NSLiteralSearch range:r].location != NSNotFound;
 }
 
 
